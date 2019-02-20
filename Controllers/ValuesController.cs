@@ -6,16 +6,18 @@ using NUglify;
 using System;
 using System.Linq;
 using carouselExample.Models;
-using System.Collections.ObjectModel;
+using Microsoft.AspNetCore.Cors;
 
 namespace carouselExample.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowAllOrigins")]
     public class ValuesController : ControllerBase
     {
         // GET api/values           
         [HttpGet]
+        [EnableCors("AllowAllOrigins")]
         public ResponseModel Get(string Url)
 
         {
