@@ -15,10 +15,10 @@ namespace carouselExample.Controllers
     [EnableCors("AllowAllOrigins")]
     public class ValuesController : ControllerBase
     {
-        // GET api/values           
+        // GET api/loadurl           
         [HttpGet]
         [EnableCors("AllowAllOrigins")]
-        public ResponseModel Get(string Url)
+        public ResponseModel LoadUrl(string Url)
 
         {
             if (!Url.StartsWith("http://") && !Url.StartsWith("https://"))
@@ -35,7 +35,7 @@ namespace carouselExample.Controllers
 
 
 
-        public static string HtmlContent(string Url)
+        private static string HtmlContent(string Url)
         {
             string html = string.Empty;
             using (WebClient client = new WebClient())
@@ -95,18 +95,10 @@ namespace carouselExample.Controllers
                         imageList.Add(loc);
                     }
                 }
-
             }
 
             return imageList;
-
         }
 
-        // POST api/values
-        [HttpPost]
-        public void GetUrl([FromBody] string urlValue)
-        {
-
-        }
     }
 }
