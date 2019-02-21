@@ -3,13 +3,13 @@ namespace carouselExample.Models
 {
     public class HtmlResponse
     {
-        public string content { get; set; }
-        public string url { get; set; }
+        public string Content { get; set; }
+        public string Url { get; set; }
 
         public HtmlResponse(string content, string url)
         {
-            this.content = content;
-            this.url = url;
+            this.Content = content;
+            this.Url = url;
 
         }
     }

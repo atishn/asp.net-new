@@ -28,7 +28,7 @@ namespace carouselExample
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
-                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                    builder => builder.AllowAnyOrigin());
             }); 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
      

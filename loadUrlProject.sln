@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "carouselExample", "carouselExample.csproj", "{3D5524C6-DE0D-42E9-B00D-F0E198E21D99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "loadUrl", "loadUrl.csproj", "{3D5524C6-DE0D-42E9-B00D-F0E198E21D99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

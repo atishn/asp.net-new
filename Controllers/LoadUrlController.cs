@@ -8,7 +8,6 @@ namespace carouselExample.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("AllowAllOrigins")]
     public class LoadUrlController : ControllerBase
     {
         [HttpGet]
@@ -17,13 +16,9 @@ namespace carouselExample.Controllers
 
         {
             if (string.IsNullOrEmpty(Url)) return null;
-
-            if (!Url.StartsWith("http://") && !Url.StartsWith("https://"))
-                Url = "http://" + Url;
-
             HtmlResponse resp = HtmlContent(Url);
-            List<string> imageUrls = GetListOfImageUrls(resp.url, resp.content);
-            string[] words = GetWords(resp.content);
+            List<string> imageUrls = GetListOfImageUrls(resp.Url, resp.Content);
+            string[] words = GetWords(resp.Content);
             Dictionary<string, int> wordCountMap = BuildWordCount(words);
             int totalWordCount = words != null? words.Length: 0;
 

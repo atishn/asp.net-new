@@ -15,6 +15,9 @@ namespace carouselExample.Helpers
         {
             try
             {
+                if (!Url.StartsWith("http://") && !Url.StartsWith("https://"))
+                    Url = "http://" + Url;
+
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
                 request.AllowAutoRedirect = true;
 
@@ -32,7 +35,8 @@ namespace carouselExample.Helpers
             }
             catch (WebException ex)
             {
-                //Todo - Handle it exception strategy.
+                //Todo - Handle it exception strategy. Do not EAT the exception. Use global Application_Error.
+                ex.Data.ToString();
                 return new HtmlResponse(null, null);
             }
 
